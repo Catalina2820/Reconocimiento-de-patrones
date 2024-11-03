@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grabador de Audio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Verifica tu edad</h1>
+    <button id="start-btn">Iniciar Grabación</button>
+    <button id="stop-btn">Detener Grabación</button>
+    <p id="status"></p>
+    <p id="result"></p>
+
+    <script>
+        $(document).ready(function() {
+            $('#start-btn').click(function() {
+                $.get('/start/', function(data) {
+                    $('#status').text(data.status);
+                });
+            });
+
+            $('#stop-btn').click(function() {
+                $.get('/stop/', function(data) {
+                    $('#status').text(data.status);
+                    $('#result').text(data.result);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

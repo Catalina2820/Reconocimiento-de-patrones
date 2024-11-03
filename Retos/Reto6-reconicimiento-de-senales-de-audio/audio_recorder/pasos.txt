@@ -1,0 +1,15 @@
+1. creación del proyecto solo la primera vez: 
+    django-admin startproject audio_recorder
+    cd audio_recorder
+    django-admin startapp recorder
+
+2. Ejecudión Navega a tu proyecto, abir con vsc
+    en la terminal navegar a la carpeta raíz del proyecto Django, donde está el archivo manage.py:
+    cd D:\...\audio_recorder
+
+3. Aplicar migraciones
+    Antes de ejecutar tu aplicación, asegúrate de que la base de datos esté configurada correctamente. Ejecuta:
+    python manage.py migrate
+
+4. Ejecutar el servidor
+    python manage.py runserver
